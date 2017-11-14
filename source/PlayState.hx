@@ -109,7 +109,7 @@ class PlayState extends FlxState
 		//trailArea = new FlxTrailArea(0, 0, FlxG.width, FlxG.height);
 
 		add(branchGroup);
-		add(hint);
+		//add(hint);
 		//add(trailArea);
 		add(leafGroup);
 
