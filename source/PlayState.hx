@@ -86,6 +86,7 @@ class PlayState extends FlxState
 	//var trailArea: FlxTrailArea;
 
 	var soundLeaves: FlxSound;
+	var hint: FlxText;
 
 	override public function create():Void
 	{
@@ -96,7 +97,7 @@ class PlayState extends FlxState
 
 		bgColor = 0xff1b0a2d;
 
-		var hint = new FlxText(10, 10, FlxG.width - 20, "click to (re)start | procjam 2017 | github.com/starry-abyss/golden-hours", 8);
+		hint = new FlxText(10, 10, FlxG.width - 20, "click to (re)start | procjam 2017 | github.com/starry-abyss/golden-hours", 8);
 		hint.alignment = RIGHT;
 		hint.color = 0xffe38c2c;
 		hint.pixelPerfectRender = true;
@@ -109,7 +110,7 @@ class PlayState extends FlxState
 		//trailArea = new FlxTrailArea(0, 0, FlxG.width, FlxG.height);
 
 		add(branchGroup);
-		//add(hint);
+		add(hint);
 		//add(trailArea);
 		add(leafGroup);
 
@@ -506,6 +507,8 @@ class PlayState extends FlxState
 
 		if (timerEnabled /*&& !iterationTimer.active*/ && FlxG.mouse.justPressed)
 		{
+			hint.visible = false;
+
 			reset();
 
 			// drop all current leaves on restart
