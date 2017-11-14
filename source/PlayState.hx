@@ -70,9 +70,6 @@ class PlayState extends FlxState
 
 	var leafAnimationTimer: FlxTimer;
 
-	// TODO: название
-	// TODO: web build и исходники и сам билд на github и github pages
-
 	var storedState: Array<StoredState>;
 	var stopTrunk: Bool;
 
